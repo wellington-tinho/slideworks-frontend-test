@@ -5,7 +5,7 @@ interface IListMoviesProps {
 export function ListMovies({ movies }: IListMoviesProps) {
   return (
     <>
-      <nav className="flex flex-wrap gap-4 p-2 max-w-screen-xl mx-auto justify-center">
+      <nav className="flex flex-wrap gap-4 p-2 max-w-screen-xl mx-auto justify-center mt-[60px]">
         {movies?.map((movie, index) => (
           <div
             key={index}
@@ -30,7 +30,7 @@ export function ListMovies({ movies }: IListMoviesProps) {
               </p>
               <div className="bg-[#726BEA] p-2 rounded-2xl py-2 px-4 flex items-center gap-1 w-[fit-content]">
                 <img
-                  src="/src/assets/icons/star.svg"
+                  src="https://raw.githubusercontent.com/wellington-tinho/slideworks-frontend-test/master/src/assets/icons/star.svg"
                   alt="Estrela"
                   className="inline-block w-4 h-4"
                 />

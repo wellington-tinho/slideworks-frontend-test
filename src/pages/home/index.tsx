@@ -12,8 +12,16 @@ export function Home() {
   const url = `?page=${page}`;
   const { data, isloading } = useFetch<DMovies.IMovies>(url);
 
+  function handlePageChange(page: number) {
+    setPage(page);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <div className="container flex justify-start items-center flex-col mx-auto">
+    <div className="container flex justify-start items-center flex-col mx-auto scroll-smooth">
       <Header />
       {isloading || !data ? ( // if isloading or data is null or undefined show Spiner
         <Spiner />
@@ -23,7 +31,7 @@ export function Home() {
           <ListMovies movies={data?.data} />
           <Pagination
             activePage={page}
-            setPage={setPage}
+            setPage={handlePageChange}
             total={data?.pagination.maxPage}
           />
         </>

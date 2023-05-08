@@ -26,7 +26,7 @@ export function DescriptionSlide({ slides, activeSlide }: ISlideImageProps) {
           >
             <div className="bg-[#716bead3] p-2 rounded-2xl py-2 px-4 flex items-center gap-1 w-[fit-content] min-w-[94px]">
               <img
-                src="/src/assets/icons/star.svg"
+                src="https://raw.githubusercontent.com/wellington-tinho/slideworks-frontend-test/master/src/assets/icons/star.svg"
                 alt="Estrela"
                 className="inline w-4 h-4"
               />

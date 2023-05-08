@@ -11,12 +11,14 @@ interface ICarroselProps {
 export function Carrosel({ movies }: ICarroselProps) {
   const [activeSlide, setActiveSlide] = useState(0);
 
+  const splitTitle = movies[8].title.includes(":") // split the title to remove the ":" and add a line break
+    ? `${movies[8].title.split(":")[0]}: \n${movies[8].title.split(":")[1]}`
+    : movies[8].title;
+
   const slides = [
     {
-      ...movies[8], // split the title to remove the ":" and add a line break
-      title: `${movies[8].title.split(":")[0]}: \n${
-        movies[8].title.split(":")[1]
-      }`,
+      ...movies[8],
+      title: splitTitle,
     },
     {
       ...movies[0],
