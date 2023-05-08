@@ -40,20 +40,22 @@ export function Carrosel({ movies }: ICarroselProps) {
   }, [activeSlide, handleSlideChange]);
 
   return (
-    <div className="relative w-screen">
-      <div className="h-[577px]">
+    <div className="relative w-screen ">
+      <div className="h-[577px] ">
         <img
-          className="h-full w-full object-cover brightness-50 bg-right-bottom md:object-[0px_-14rem] object-top "
+          className="h-full w-full object-cover brightness-50 bg-right-bottom xl:object-[0px_-15rem] object-top 
+            
+          "
           src={slides[activeSlide].image_url}
           alt={slides[activeSlide].title}
         />
       </div>
-      <div className="absolute top-0 left-0 w-full h-full flex">
-        <div className="my-auto w-full flex justify-between mx-10 md:mx-28">
+      <div className="absolute top-0 left-0 w-full h-full flex border-2 border-red-500">
+        <div className="my-auto relative w-full flex justify-between mx-10 md:mx-28">
           {/* buttons to change slide */}
           <button
             onClick={() => handleSlideChange(activeSlide - 1)}
-            className="text-white text-3xl "
+            className="text-white text-3xl z-10"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +74,7 @@ export function Carrosel({ movies }: ICarroselProps) {
           </button>
           <button
             onClick={() => handleSlideChange(activeSlide + 1)}
-            className="text-white text-3xl "
+            className="text-white text-3xl z-10"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,18 +93,20 @@ export function Carrosel({ movies }: ICarroselProps) {
           </button>
         </div>
 
-        <div className="absolute md:top-1/2 left-0 w-full h-full flex md:-mt-8 items-center md:items-stretch">
-          {/* Description slide */}
-          <div className="mx-28 w-[559px] flex justify-between md:mx-[216px] max-h-[205px]">
-            <div className="flex flex-col gap-2">
-              <p className="font-montserrat font-bold text-white text-base">
-                Destaque do mes
+        <div className="absolute h-full top-1/2 -mt-10 md:w-[559px] w-[80%]">
+          <div className="my-auto w-full flex justify-between mx-20  md:ml-40 lg:mx-52 ">
+            <div className="flex flex-col gap-4">
+              <p className="font-montserrat font-bold text-white text-xs md:text-base">
+                Destaque do mês
               </p>
-              <h1 className="font-montserrat font-bold text-[40px] text-white">
+              <h1 className="font-montserrat font-bold text-2xl md:text-[40px] md:leading-[60px] text-white ">
                 {slides[activeSlide].title}
               </h1>
 
-              <div className="inline-flex items-center md:items-baseline gap-2">
+              <div
+                className="md:inline-flex items-center
+                md:items-start gap-2"
+              >
                 <div className="bg-[#716bead3] p-2 rounded-2xl py-2 px-4 flex items-center gap-1 w-[fit-content] min-w-[94px]">
                   <img
                     src="src/assets/icons/star.svg"
@@ -113,7 +117,7 @@ export function Carrosel({ movies }: ICarroselProps) {
                     {slides[activeSlide].rating}/10
                   </span>
                 </div>
-                <p className="font-montserrat font-semibold text-base mt-2 mb-4  text-white">
+                <p className="font-montserrat font-semibold text-sm md:text-base mt-2 mb-4 text-white overflow-ellipsis flex-nowrap">
                   {slides[activeSlide].crew}
                 </p>
               </div>
