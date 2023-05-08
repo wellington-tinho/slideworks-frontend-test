@@ -1,4 +1,5 @@
 import { Carrosel } from "../../components/Carroseal";
+import Footer from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { ListMovies } from "../../components/ListMovies";
 import { Spiner } from "../../components/Spiner";
@@ -18,6 +19,7 @@ export function Home() {
           <ListMovies movies={data?.data} />{" "}
         </>
       )}
+      <Footer />
     </div>
   );
 }
