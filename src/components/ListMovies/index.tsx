@@ -30,7 +30,7 @@ export function ListMovies({ movies }: IListMoviesProps) {
               </p>
               <div className="bg-[#726BEA] p-2 rounded-2xl py-2 px-4 flex items-center gap-1 w-[fit-content]">
                 <img
-                  src="src/assets/icons/star.svg"
+                  src="/src/assets/icons/star.svg"
                   alt="Estrela"
                   className="inline-block w-4 h-4"
                 />

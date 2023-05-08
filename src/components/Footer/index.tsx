@@ -14,17 +14,17 @@ export default function Footer() {
         </div>
         <div className="flex gap-6">
           <img
-            src="src/assets/icons/facebook.svg"
+            src="/src/assets/icons/facebook.svg"
             alt="logo do facebook"
             className="h-9 w-9"
           />
           <img
-            src="src/assets/icons/twitter.svg"
+            src="/src/assets/icons/twitter.svg"
             alt="logo do twitter"
             className="h-9 w-9"
           />
           <img
-            src="src/assets/icons/instagram.svg"
+            src="/src/assets/icons/instagram.svg"
             alt="logo do instagram"
             className="h-9 w-9"
           />
