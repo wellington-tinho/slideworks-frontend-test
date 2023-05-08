@@ -21,8 +21,8 @@ export function DescriptionSlide({ slides, activeSlide }: ISlideImageProps) {
           </h1>
 
           <div
-            className="md:inline-flex items-center
-                md:items-start gap-2"
+            className="inline-flex items-center
+               gap-2"
           >
             <div className="bg-[#716bead3] p-2 rounded-2xl py-2 px-4 flex items-center gap-1 w-[fit-content] min-w-[94px]">
               <img
@@ -34,7 +34,7 @@ export function DescriptionSlide({ slides, activeSlide }: ISlideImageProps) {
                 {slides[activeSlide].rating}/10
               </span>
             </div>
-            <p className="font-montserrat font-semibold text-sm md:text-base mt-2 mb-4 text-white overflow-ellipsis flex-nowrap">
+            <p className="font-montserrat font-semibold text-sm md:text-base my-0 text-white overflow-ellipsis flex-nowrap">
               {slides[activeSlide].crew}
             </p>
           </div>
