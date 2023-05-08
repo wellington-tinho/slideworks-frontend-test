@@ -10,7 +10,11 @@ import { useFetch } from "../../hooks/useFetch";
 export function Home() {
   const [page, setPage] = useState(1);
   const url = `?page=${page}`;
-  const { data, isloading } = useFetch<DMovies.IMovies>(url);
+  const {
+    data,
+    error,
+    isValidating: isloading,
+  } = useFetch<DMovies.IMovies, Error>(url);
 
   function handlePageChange(page: number) {
     setPage(page);
@@ -23,7 +27,7 @@ export function Home() {
   return (
     <div className="container flex justify-start items-center flex-col mx-auto scroll-smooth">
       <Header />
-      {isloading || !data ? ( // if isloading or data is null or undefined show Spiner
+      {isloading || error || !data ? ( // if isloading or error or data is null, show the spinner
         <Spiner />
       ) : (
         <>
