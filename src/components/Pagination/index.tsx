@@ -6,7 +6,7 @@ interface IPaginationProps {
   total: number;
 }
 
-export default function Pagination({
+export function Pagination({
   activePage,
   setPage,
   total,

@@ -9,8 +9,8 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <MantineProvider withGlobalStyles withNormalizeCSS>
+    <QueryClientProvider client={queryClient}> {/* use react-query to cache the api requests */}
+      <MantineProvider withGlobalStyles withNormalizeCSS> {/* use mantine to style the components pagination */}
         <App />
       </MantineProvider>
     </QueryClientProvider>

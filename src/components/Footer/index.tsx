@@ -1,4 +1,4 @@
-export default function Footer() {
+export function Footer() {
   return (
     <div className="flex flex-col md:items-start justify-between bg-[#726BEA] w-screen items-center h-[293px] mt-16 sm:px-16 md:px-28 ">
       <img
