@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Carrosel } from "../../components/Carroseal";
 import Footer from "../../components/Footer";
 import { Header } from "../../components/Header";
@@ -9,12 +9,9 @@ import { useFetch } from "../../hooks/useFetch";
 
 export function Home() {
   const [page, setPage] = useState(1);
-  const url = `?page=${page}`;
-  const {
-    data,
-    error,
-    isValidating: isloading,
-  } = useFetch<DMovies.IMovies, Error>(url);
+  const url = useMemo(() => `?page=${page}`, [page]); // useMemo is used to prevent the url from being recreated every time the component is rendered
+  const { data, isError, isFetching, isLoading } =
+    useFetch<DMovies.IMovies>(url); // useSWRConfig is used to invalidate the cache
 
   function handlePageChange(page: number) {
     setPage(page);
@@ -27,7 +24,7 @@ export function Home() {
   return (
     <div className="container flex justify-start items-center flex-col mx-auto scroll-smooth">
       <Header />
-      {isloading || error || !data ? ( // if isloading or error or data is null, show the spinner
+      {isLoading || isError || isFetching ? ( // if isloading or iserror or isfetching is true, show the spinner
         <Spiner />
       ) : (
         <>
